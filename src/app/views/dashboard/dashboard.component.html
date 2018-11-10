@@ -1,0 +1,147 @@
+<div class="card">
+  <div class="card-header" style="padding-bottom: 2px;padding-top: 7px;padding-left: 7px;">
+        <table>
+          <tr>
+            <td>
+                <form #myForm="ngForm" novalidate>
+                    <my-date-range-picker name="mydaterange" [options]="myDateRangePickerOptions"
+                                    [(ngModel)]="model" required></my-date-range-picker></form>
+            </td>
+            <td style="padding-bottom: 5px;">
+                <button aria-pressed="true" class="btn btn-block btn-success active" type="button">Search</button>
+            </td>
+          </tr>
+        </table>
+</div>
+</div>  
+
+<div class="row">
+<div class="col-lg-12">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            Place By Domain
+          </div>
+          <div class="card-body">
+            <div class="chart-wrapper">
+                <canvas baseChart class="chart"
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+          <div class="card">
+              <div class="card-header">
+                Track By Date
+              </div>
+              <div class="card-body">
+                <div class="chart-wrapper">
+                    <canvas baseChart class="chart"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColours"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+                </div>
+              </div>
+        </div>
+
+         
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+           <div class="card">
+              <div class="card-header">
+                Job Status
+              </div>
+              <div class="card-body">
+                <div class="chart-wrapper">
+                  <canvas baseChart class="chart"
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="col-lg-6 mb-4">
+              <!-- Nav tabs -->
+              <tabset>
+                <tab>
+                  <ng-template tabHeading><i class="icon-list"></i> Summery &nbsp;<span class="badge badge-success">New</span></ng-template>
+                  <table class="table">
+                    <tbody>
+                          <tr>
+                            <td>Total Open Position</td>
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                              <td>Total Interview Schedule</td>
+                              <td>100</td>
+                          </tr>
+
+                          <tr>
+                              <td>Total Candidate Attended</td>
+                              <td>100</td>
+                          </tr>
+                          
+
+                          <tr>
+                              <td>Offer Accepted</td>
+                              <td>40</td>
+                          </tr>
+                          <tr>
+                              <td>Offer Rejected</td>
+                              <td>10</td>
+                          </tr>
+                          
+                    </tbody>
+                  </table>
+                </tab>
+                <tab>
+                  <ng-template tabHeading><i class="icon-calculator"></i> Calculator &nbsp;<span class="badge badge-pill badge-danger">29</span></ng-template>
+                  2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </tab>
+                <tab>
+                  <ng-template tabHeading><i class="icon-pie-chart"></i> Charts</ng-template>
+                  4. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </tab>
+              </tabset>
+           
+
+          <!-- <div class="card">
+              <div class="card-header">
+                Opening Summery
+              </div>
+              <div class="card-body">
+                <div class="chart-wrapper">
+                   Total Open Position : 100
+                   Current Open Position : 70
+                   Offer accepted : 30
+                   Offer rejected : 20
+                   Offer in process : 10
+
+                </div>
+              </div>
+        </div> -->
+      </div>
+    </div>
+
+</div>
+
+</div>
